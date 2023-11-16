@@ -20,10 +20,6 @@ module.exports = {
                 ],
             },
             {
-                test: /\.s[ac]ss$/i,
-                use: ['style-loader', 'css-loader', 'sass-loader'],
-            },
-            {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader'],
             },
@@ -40,6 +36,10 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, '..', './build'),
         filename: 'bundle.js',
+        publicPath: '/'
+    },
+    devServer: {
+        historyApiFallback: true,
     },
     plugins: [
         new HtmlWebpackPlugin({
