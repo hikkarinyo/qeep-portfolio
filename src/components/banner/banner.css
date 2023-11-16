@@ -1,0 +1,21 @@
+.banner {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.bannerTitle {
+    font-family: Inter, sans-serif;
+    background-color: #1a1919;
+    background-image: linear-gradient(90deg, #59b720, #eeff00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 10vmax;
+}
+
+@media (max-width: 500px) {
+    .bannerTitle {
+        font-size: 6vmax;
+    }
+}
+
