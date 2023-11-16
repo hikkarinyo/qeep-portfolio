@@ -5,16 +5,25 @@
 }
 
 .project {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.projectSection {
+    display: flex;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
+    justify-content: space-between;
     margin: 50px 0;
 }
 
 .projectImage {
     display: flex;
     justify-content: center;
+    flex-shrink: 0;
+    max-width: 700px;
 }
 
 .projectImage img {
@@ -26,11 +35,8 @@
 .projectContent {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
-    margin: 0 20px;
 }
 
 .projectTitle {
@@ -55,9 +61,10 @@
 
 .projectTechnologiesWrapper {
     display: grid;
-    grid-template-columns: repeat(6,1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-column-gap: 20px;
     grid-row-gap: 20px;
+    margin-top: 20px;
 }
 
 .projectTechnologies {
@@ -75,41 +82,40 @@
     justify-content: center;
 }
 
+@media (max-width: 1800px) {
 
-@media (max-width: 1270px) {
-    .projectTitle {
-        font-size: 2.375rem;
-    }
-
-    .project {
-        grid-template-columns: repeat(1,1fr);
+    .projectImage {
+       height: 100%;
     }
 }
 
-@media (max-width: 320px) {
-    .projectTitle {
-        font-size: 2rem;
-        text-align: center;
+@media (max-width: 1500px) {
+    .projectSection {
+        align-items: center;
+        width: 100%;
     }
 
-    .gradientSubTitle {
+    .projectSection:nth-child(even) {
+        flex-direction: column-reverse;
+    }
+
+    .projectSection:nth-child(odd) {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .projectTechnologiesWrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 425px) {
+    .gradientSubTitle, .projectTitle {
         font-size: 2rem;
     }
 
     .projectText {
         font-size: 1rem;
-    }
-
-    .project {
-        grid-template-columns: repeat(1,1fr);
-    }
-
-    .projectImage {
-        display: flex;
-        justify-content: center;
-    }
-
-    .projectTechnologiesWrapper {
-        grid-template-columns: repeat(2,1fr);
     }
 }

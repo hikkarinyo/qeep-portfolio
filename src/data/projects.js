@@ -1,6 +1,7 @@
 export default [
     {
-        id: '1',
+        id: "1",
+        link: "wholesale-order",
         title: " \"Оптовый заказ\" для Supplement Group",
         description: "Веб-приложение для формирования оптовых закупок.",
         cardImage: "/images/vt-catalog/vt-catalog.png",
@@ -12,14 +13,15 @@ export default [
         technologies: [ "PHP", "Symfony", "Docker", "TypeScript", "React", "Redux Toolkit"],
         result: "Веб-приложение \"Оптовый заказ\" существенно упростило процедуру оптового заказа для клиентов Supplement Group, улучшило их взаимодействие с компанией и повысило их удовлетворенность. Это также способствовало улучшению управления заказами и оптимизации запасов со стороны компании.",
         images: {
-            1: '/images/vt-catalog/vt-catalog-imac.png',
-            2: '/images/vt-catalog/vt-catalog-macbook.png',
-            3: '/images/vt-catalog/vt-catalog-flying-macbook.png',
-            4: '/images/vt-imac.png',
+            1: "/images/vt-catalog/vt-catalog-imac.png",
+            2: "/images/vt-catalog/vt-catalog-macbook.png",
+            3: "/images/vt-catalog/vt-catalog-flying-macbook.png",
+            4: "/images/vt-imac.png",
         }
     },
     {
-        id: '2',
+        id: "2",
+        link: "wholesale-order-stm-clients",
         title: "\"Оптовый заказ для СТМ клиентов\" для Supplement Group",
         description: "Веб приложение для формирования оптовых закупок для СТМ покупателей.",
         cardImage: "/images/vt-stm/vt-stm.png",
@@ -31,14 +33,15 @@ export default [
         technologies: [ "PHP", "Symfony", "Docker", "TypeScript", "React", "Redux Toolkit"],
         result: "Наше веб-приложение \"Оптовый заказ для СТМ клиентов\" значительно улучшило возможности клиентов Supplement Group по индивидуализации и заказу продуктов. Это не только повысило удовлетворенность клиентов, но и обеспечило более гибкое и эффективное управление заказами для компании.",
         images: {
-            1: '/images/vt-stm/vt-stm-imac.png',
-            2: '/images/vt-stm/vt-stm-floating-macbook.png',
-            3: '/images/vt-stm/vt-stm-ipad.png',
-            4: '/images/vt-stm/vt-stm-iphone.png',
+            1: "/images/vt-stm/vt-stm-imac.png",
+            2: "/images/vt-stm/vt-stm-floating-macbook.png",
+            3: "/images/vt-stm/vt-stm-ipad.png",
+            4: "/images/vt-stm/vt-stm-iphone.png",
         }
     },
     {
-        id: '3',
+        id: "3",
+        link: "recipe-management-system",
         title: "\"Система управления рецептами\" для Supplement Group",
         description: "Внутреннее веб-приложение управления рецептурой.",
         cardImage: "/images/vt-recipes/vt-recipes.png",
@@ -50,14 +53,15 @@ export default [
         result: "\"Система управления рецептами\" значительно упростил и ускорил процессы управления рецептурами в Supplement Group, обеспечивая быстрый доступ к данным и удобство их редактирования. Система также способствовала повышению точности и сокращению времени на разработку новых продуктов.",
         technologies: [ "PHP", "Symfony", "Docker", "TypeScript", "React", "Redux Toolkit"],
         images: {
-            1: '/images/vt-recipes/vt-recipes-imac.png',
-            2: '/images/vt-recipes/vt-recipes-right-macbook.png',
-            3: '/images/vt-recipes/vt-recipes-flying-macbook.png',
-            4: '/images/vt-imac.png',
+            1: "/images/vt-recipes/vt-recipes-imac.png",
+            2: "/images/vt-recipes/vt-recipes-right-macbook.png",
+            3: "/images/vt-recipes/vt-recipes-flying-macbook.png",
+            4: "/images/vt-imac.png",
         }
     },
     {
-        id: '4',
+        id: "4",
+        link: "news-management",
         title: "\"Управление новинками\" для Supplement Group",
         description: "Внутреннее веб-приложение для управления выводом новинок на рынок.",
         cardImage: "/images/vt-news/vt-news.png",
@@ -69,14 +73,15 @@ export default [
         technologies: [ "PHP", "Symfony", "Docker", "TypeScript", "React", "Redux Toolkit"],
         result: "\"Управление новинками\" позволил Supplement Group значительно ускорить процесс разработки и вывода новых продуктов на рынок, улучшить взаимодействие между отделами и повысить эффективность принятия решений на основе данных. Платформа также способствовала более эффективному управлению ресурсами и сокращению времени на рыночный запуск новых продуктов.",
         images: {
-            1: '/images/vt-news/vt-news-imac.png',
-            2: '/images/vt-news/vt-news-right-macbook.png',
-            3: '/images/vt-news/vt-news-flying-macbook.png',
-            4: '/images/vt-imac.png',
+            1: "/images/vt-news/vt-news-imac.png",
+            2: "/images/vt-news/vt-news-right-macbook.png",
+            3: "/images/vt-news/vt-news-flying-macbook.png",
+            4: "/images/vt-imac.png",
         }
     },
     {
-        id: '5',
+        id: "5",
+        link: "vt-operator",
         title: " \"VT.Оператор\" для Vitamin Trade",
         description: "Мобильное приложение Vitamin.Trade.Оператор - для управления поставками и управления складом.",
         cardImage: "/images/vt-operator/vt-operator.png",
@@ -88,14 +93,15 @@ export default [
         technologies: [ "1C", "TypeScript", "React Native", "Redux Toolkit", "RTK Query"],
         result: " \"VT.Оператор\" значительно упростил и оптимизировал процессы на складах Vitamin Trade, сократив время на подготовку и отправку заказов. Процесс печати стикеров теперь автоматизирован, что снижает вероятность ошибок и повышает эффективность работы операторов.",
         images: {
-            1: '/images/vt-operator/vt-operator-realme.png',
-            2: '/images/vt-operator/vt-operator-scan.png',
-            3: '/images/vt-operator/vt-operator-isometric.png',
-            4: '/images/vt-operator/vt-operator-iphone11.png',
+            1: "/images/vt-operator/vt-operator-realme.png",
+            2: "/images/vt-operator/vt-operator-scan.png",
+            3: "/images/vt-operator/vt-operator-isometric.png",
+            4: "/images/vt-operator/vt-operator-iphone11.png",
         }
     },
     {
-        id: '6',
+        id: "6",
+        link: "vt-executor",
         title: "\"VT.Executor\" для Vitamin Trade",
         description: "Мобильное приложение, которое революционизирует процессы на производственных линиях и складах Vitamin Trade.",
         cardImage: "/images/vt-executor/vt-executor.png",
@@ -107,14 +113,15 @@ export default [
         technologies: [ "PHP", "Symfony", "Docker", "TypeScript", "React Native", "Redux Toolkit", "RTK Query"],
         result: "\"VT.Executor\" существенно улучшил процессы производства и упаковки в Vitamin Trade, увеличивая производительность и сокращая время на подготовку продукции к отгрузке. Автоматизация ключевых процессов также помогла минимизировать вероятность ошибок и улучшить контроль качества.",
         images: {
-            1: '/images/vt-executor/vt-executor-two-phone.png',
-            2: '/images/vt-executor/vt-executor-scan.png',
-            3: '/images/vt-executor/vt-executor-realme.png',
-            4: '/images/vt-executor/vt-executor-three-phone.png',
+            1: "/images/vt-executor/vt-executor-two-phone.png",
+            2: "/images/vt-executor/vt-executor-scan.png",
+            3: "/images/vt-executor/vt-executor-realme.png",
+            4: "/images/vt-executor/vt-executor-three-phone.png",
         }
     },
     {
-        id: '7',
+        id: "7",
+        link: "qeep-pro",
         title: "QEEP-Pro",
         description: "Наша собственная разработка CRM-системы, предназначенная для управления заказами в кафе и ресторанах.",
         cardImage: "./images/qeep-pro/qeep-pro.png",
@@ -126,15 +133,16 @@ export default [
         technologiesDescription: "Система разработана с использованием передовых технологий и облачных решений, что гарантирует её надежность, масштабируемость и доступность с любого устройства. Также интегрированы аналитические инструменты для глубокого понимания потребностей клиентов и оптимизации бизнес-процессов.",
         result: "Наша CRM-система уже помогла многим ресторанам и кафе повысить эффективность управления заказами, улучшить качество обслуживания и увеличить уровень удовлетворенности клиентов. Она стала незаменимым инструментом в повседневной работе наших клиентов, помогая им достигать высоких стандартов обслуживания и операционной эффективности.",
         images: {
-            1: '/images/qeep-pro/qeep-pro-imac.png',
-            2: '/images/qeep-pro/qeep-pro-macbook.png',
-            3: '/images/qeep-pro/qeep-pro-flying-macbook.png',
-            4: '/images/qeep-pro/qeep-pro-ipad.png',
+            1: "/images/qeep-pro/qeep-pro-imac.png",
+            2: "/images/qeep-pro/qeep-pro-macbook.png",
+            3: "/images/qeep-pro/qeep-pro-flying-macbook.png",
+            4: "/images/qeep-pro/qeep-pro-ipad.png",
         }
     },
     {
-        id: '8',
+        id: "8",
         title: "QEEP-Shop",
+        link: "qeep-shop",
         description: "QEEP-Shop — это инновационный генератор сайтов для электронной коммерции, интегрированный с нашей флагманской CRM системой QEEP-pro.",
         cardImage: "/images/qeep-shop/qeep-shop.png",
         type: "web",
@@ -145,10 +153,10 @@ export default [
         technologiesDescription: "Платформа разработана на основе современных веб-технологий, обеспечивая гибкость, масштабируемость и высокую производительность. Интеграция с QEEP-pro позволяет автоматизировать многие процессы, связанные с управлением заказами и клиентскими данными.",
         result: "С помощью QEEP-Shop предприятия быстро и эффективно запустили свои онлайн-магазины, обеспечив удобное управление заказами и клиентскими данными. Платформа помогает бизнесам расширять свое онлайн-присутствие, увеличивать продажи и улучшать взаимодействие с клиентами.",
         images: {
-            1: '/images/qeep-shop/qeep-shop.png',
-            2: '/images/qeep-shop/qeep-shop-iphone.png',
-            3: '/images/qeep-shop/qeep-shop-ipad.png',
-            4: '/images/qeep-shop/qeep-shop-macbook.png',
+            1: "/images/qeep-shop/qeep-shop.png",
+            2: "/images/qeep-shop/qeep-shop-iphone.png",
+            3: "/images/qeep-shop/qeep-shop-ipad.png",
+            4: "/images/qeep-shop/qeep-shop-macbook.png",
         }
     },
 ]
