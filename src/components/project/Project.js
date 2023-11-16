@@ -46,32 +46,48 @@ const Project = () => {
                     <img src={project.images['1']} alt={project.title} draggable='false'/>
                 </div>
             </section>
+            {project.objective &&
+            <section className='projectSection'>
+                    <div className='projectContent'>
+                        <h2 className='gradientSubTitle gradient'>Цель проекта</h2>
+                        <p className='projectText'>{project.objective}</p>
+                    </div>
+            </section>
+            }
             <section className='projectSection'>
                 <div className='projectImage'>
                     <img className='projectImage' src={project.images['2']} alt={project.title} draggable='false'/>
                 </div>
-                {project.solution &&
-                    <div className='projectContent'>
-                        <h2 className='gradientSubTitle gradient'>Решение</h2>
-                        <p className='projectText'>{project.solution}</p>
-                    </div>
-                }
-                {project.improvement &&
-                    <div className='projectContent'>
-                        <h2 className='gradientSubTitle gradient'>Непрерывное совершенствование</h2>
-                        <p className='projectText'>{project.improvement}</p>
-                    </div>
-                }
-                {project.featuresAndInnovations &&
-                    <div className='projectContent'>
-                        <h2 className='gradientSubTitle gradient'>Особенности и инновации</h2>
-                        {project.featuresAndInnovations?.map((item, index) => (
-                            <ul key={index}>
-                                <li className='projectText'>{item}</li>
-                            </ul>
-                        ))}
-                    </div>
-                }
+                <div className='projectContent'>
+                    {project.solution &&
+                        <>
+                            <h2 className='gradientSubTitle gradient'>Решение</h2>
+                            <p className='projectText'>{project.solution}</p>
+                        </>
+                    }
+                    {project.projectFeatures &&
+                        <>
+                            <h2 className='gradientSubTitle gradient'>Особенности проекта</h2>
+                            <p className='projectText'>{project.projectFeatures}</p>
+                        </>
+                    }
+                    {project.improvement &&
+                        <>
+                            <h2 className='gradientSubTitle gradient'>Непрерывное совершенствование</h2>
+                            <p className='projectText'>{project.improvement}</p>
+                        </>
+                    }
+                    {project.featuresAndInnovations &&
+                        <>
+                            <h2 className='gradientSubTitle gradient'>Особенности и инновации</h2>
+                            {project.featuresAndInnovations?.map((item, index) => (
+                                <ul key={index}>
+                                    <li className='projectText'>{item}</li>
+                                </ul>
+                            ))}
+                        </>
+                    }
+                </div>
             </section>
             <section className='projectSection'>
                 <div className='projectContent'>
