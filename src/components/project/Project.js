@@ -82,7 +82,10 @@ const Project = () => {
                             <h2 className='gradientSubTitle gradient'>Особенности и инновации</h2>
                             {project.featuresAndInnovations?.map((item, index) => (
                                 <ul key={index}>
-                                    <li className='projectText'>{item}</li>
+                                    <li className='projectList'>
+                                        <span className='projectNumberList gradient'>0{index+1}</span>
+                                        <span className='projectText'>{item}</span>
+                                    </li>
                                 </ul>
                             ))}
                         </>
@@ -115,9 +118,11 @@ const Project = () => {
                 </div>
             </section>
             <section className='projectSection'>
+                {project.images['4'] &&
                 <div className='projectImage'>
                     <img className='projectImage' src={project.images['4']} alt={project.title} draggable='false'/>
                 </div>
+                }
                 <div className='projectContent'>
                     {project.technologiesDescription &&
                         <>
