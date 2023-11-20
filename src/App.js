@@ -5,33 +5,33 @@ import Home from './pages/Home'
 import Project from './components/project/Project'
 import Loader from './components/loader/Loader'
 
-
 function App() {
     const [isLoading, setIsLoading] = useState(true)
+    const location = useLocation()
 
     useEffect(() => {
         setIsLoading(true)
         const timer = setTimeout(() => {
             setIsLoading(false)
-        }, 1000)
+        }, 2000)
 
         return () => {
             clearTimeout(timer)
         }
-    }, [])
+    }, [location.pathname])
 
     return (
         <>
-
-                <ParallaxProvider>
+            {isLoading
+                ? <Loader/>
+                : <ParallaxProvider>
                     <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/projects/:name" element={<Project />} />
+                        <Route path='/' element={<Home/>}/>
+                        <Route path='/projects/:name' element={<Project/>}/>
                     </Routes>
                 </ParallaxProvider>
-
+            }
         </>
     )
 }
-
 export default App
