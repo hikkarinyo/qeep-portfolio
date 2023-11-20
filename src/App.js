@@ -8,7 +8,6 @@ import Loader from './components/loader/Loader'
 
 function App() {
     const [isLoading, setIsLoading] = useState(true)
-    const location = useLocation()
 
     useEffect(() => {
         setIsLoading(true)
@@ -19,7 +18,7 @@ function App() {
         return () => {
             clearTimeout(timer)
         }
-    }, [location.pathname]) // Add location.pathname as a dependency to useEffect
+    }, [])
 
     return (
         <>

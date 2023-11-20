@@ -113,6 +113,22 @@
     grid-column-gap: 50px;
 }
 
+.skeleton {
+    width: 700px;
+    height: 700px;
+    background-color: #f2f2f2;
+    animation: skeleton-loading 1.5s infinite alternate;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-color: #59b720;
+    }
+    100% {
+        background-color: #eeff00;
+    }
+}
+
 @media (max-width: 1800px) {
 
     .projectImage {

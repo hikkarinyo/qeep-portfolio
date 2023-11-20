@@ -1,15 +1,25 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import projects from '../../data/projects'
 import '../project/project.css'
 import ScrollButton from "../scrollButton/ScrollButton";
+import Loader from "../loader/Loader";
 
 const Project = () => {
     const {name} = useParams()
     const project = projects.find(project => project.link === name)
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
         window.scrollTo({top: 0, behavior: 'smooth'})
+
+        const timer = setTimeout(() => {
+            setIsLoading(false)
+        }, 2000)
+
+        return () => {
+            clearTimeout(timer)
+        }
     }, [])
 
     return (
@@ -43,7 +53,11 @@ const Project = () => {
                     }
                 </div>
                 <div className='projectImage'>
-                    <img src={project.images['1']} alt={project.title} draggable='false'/>
+                    {isLoading ? (
+                        <div className='skeleton' />
+                    ) : (
+                    <img className='projectImage' src={project.images['1']} alt={project.title} draggable='false'/>)
+                    }
                 </div>
             </section>
             {project.objective &&
@@ -56,7 +70,11 @@ const Project = () => {
             }
             <section className='projectSection'>
                 <div className='projectImage'>
-                    <img className='projectImage' src={project.images['2']} alt={project.title} draggable='false'/>
+                    {isLoading ? (
+                        <div className='skeleton' />
+                    ) : (
+                    <img className='projectImage' src={project.images['2']} alt={project.title} draggable='false'/>)
+                    }
                 </div>
                 <div className='projectContent'>
                     {project.solution &&
@@ -114,13 +132,21 @@ const Project = () => {
                     }
                 </div>
                 <div className='projectImage'>
-                    <img className='projectImage' src={project.images['3']} alt={project.title} draggable='false'/>
+                    {isLoading ? (
+                        <div className='skeleton' />
+                    ) : (
+                    <img className='projectImage' src={project.images['3']} alt={project.title} draggable='false'/>)
+                    }
                 </div>
             </section>
             <section className='projectSection'>
                 {project.images['4'] &&
                 <div className='projectImage'>
-                    <img className='projectImage' src={project.images['4']} alt={project.title} draggable='false'/>
+                    {isLoading ? (
+                        <div className='skeleton' />
+                    ) : (
+                    <img className='projectImage' src={project.images['4']} alt={project.title} draggable='false'/>)
+                    }
                 </div>
                 }
                 <div className='projectContent'>
