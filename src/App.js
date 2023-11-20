@@ -1,13 +1,36 @@
-import Home from './pages/Home'
+import { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
+import { ParallaxProvider } from 'react-scroll-parallax'
+import Home from './pages/Home'
 import Project from './components/project/Project'
+import Loader from './components/loader/Loader'
+
 
 function App() {
+    const [isLoading, setIsLoading] = useState(true)
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false)
+        }, 2000)
+
+        return () => {
+            clearTimeout(timer)
+        }
+    }, [])
+
     return (
-        <Routes>
-            <Route path='/' element={<Home/>}/>
-            <Route path='/projects/:name' element={<Project/>}/>
-        </Routes>
+        <>
+            {isLoading
+                ? <Loader/>
+                : <ParallaxProvider>
+                    <Routes>
+                        <Route path='/' element={<Home/>}/>
+                        <Route path='/projects/:name' element={<Project/>}/>
+                    </Routes>
+                </ParallaxProvider>
+            }
+        </>
     )
 }
 

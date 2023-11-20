@@ -96,7 +96,6 @@ export default [
             1: "/images/vt-operator/vt-operator-realme.png",
             2: "/images/vt-operator/vt-operator-scan.png",
             3: "/images/vt-operator/vt-operator-isometric.png",
-            4: "/images/vt-operator/vt-operator-iphone11.png",
         }
     },
     {
@@ -185,7 +184,7 @@ export default [
         id: 10,
         title: "Интегрированная Система Мониторинга и Управления",
         link: "ismu",
-        cardImage: "/images/ismu/ismu-imac.png",
+        cardImage: "/images/ismu/ismu.png",
         description: "Система предназначена для сбора, обработки и анализа данных с измерительных устройств, используемых на промышленных объектах Газпрома.",
         type: "web",
         client: "Газпром, ведущий мировой энергетический гигант.",
@@ -201,10 +200,9 @@ export default [
         ],
         businessResult: "Наша система обеспечивает Газпром мощным инструментом для мониторинга и управления процессами на промышленных объектах. Это позволяет компании повышать эффективность работы, сокращать время реакции на изменения в процессах и улучшать безопасность. Система способствует повышению общей производительности и оптимизации операций, что является ключевым фактором для устойчивого развития и лидерства Газпрома на мировом энергетическом рынке.",
         images: {
-            1: "/images/ismu/ismu.png",
+            1: "/images/ismu/ismu-imac.png",
+            2: "/images/ismu/ismu-table-imac.png",
             3: "/images/ismu/ismu-macbook.png",
-            2: "/images/im/im-macbook.png",
-            4: "/images/im/interactive-map.png",
         }
     },
 ]

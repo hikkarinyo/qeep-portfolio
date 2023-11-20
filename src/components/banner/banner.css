@@ -1,7 +1,13 @@
 .banner {
-    display: grid;
-    place-items: center;
     height: 100vh;
+}
+
+.bannerWrapper {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .bannerTitle {
@@ -11,6 +17,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 10vmax;
+    text-transform: uppercase;
 }
 
 @media (max-width: 500px) {
@@ -18,4 +25,3 @@
         font-size: 6vmax;
     }
 }
-
