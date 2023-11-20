@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import { ParallaxProvider } from 'react-scroll-parallax'
 import Home from './pages/Home'
 import Project from './components/project/Project'
@@ -8,8 +8,10 @@ import Loader from './components/loader/Loader'
 
 function App() {
     const [isLoading, setIsLoading] = useState(true)
+    const location = useLocation()
 
     useEffect(() => {
+        setIsLoading(true)
         const timer = setTimeout(() => {
             setIsLoading(false)
         }, 2000)
@@ -17,19 +19,20 @@ function App() {
         return () => {
             clearTimeout(timer)
         }
-    }, [])
+    }, [location.pathname]) // Add location.pathname as a dependency to useEffect
 
     return (
         <>
-            {isLoading
-                ? <Loader/>
-                : <ParallaxProvider>
+            {isLoading ? (
+                <Loader />
+            ) : (
+                <ParallaxProvider>
                     <Routes>
-                        <Route path='/' element={<Home/>}/>
-                        <Route path='/projects/:name' element={<Project/>}/>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/projects/:name" element={<Project />} />
                     </Routes>
                 </ParallaxProvider>
-            }
+            )}
         </>
     )
 }
