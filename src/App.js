@@ -22,16 +22,14 @@ function App() {
 
     return (
         <>
-            {isLoading ? (
-                <Loader />
-            ) : (
+
                 <ParallaxProvider>
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/projects/:name" element={<Project />} />
                     </Routes>
                 </ParallaxProvider>
-            )}
+
         </>
     )
 }

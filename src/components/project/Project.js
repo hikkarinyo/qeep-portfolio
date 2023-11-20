@@ -1,51 +1,52 @@
 import React, {useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import projects from '../../data/projects'
+import data from '../../../public/data.json'
 import '../project/project.css'
 import ScrollButton from "../scrollButton/ScrollButton";
 import Loader from "../loader/Loader";
 
 const Project = () => {
-    const {name} = useParams()
-    const project = projects.find(project => project.link === name)
-    const [isLoading, setIsLoading] = useState(true)
+    const { name } = useParams();
+    const [loading, setLoading] = useState(true);
+    const [project, setProject] = useState(null);
+
+    console.log(data)
 
     useEffect(() => {
-        window.scrollTo({top: 0, behavior: 'smooth'})
-
-        const timer = setTimeout(() => {
-            setIsLoading(false)
-        }, 2000)
-
-        return () => {
-            clearTimeout(timer)
-        }
-    }, [])
+        fetch('/data.json')
+            .then(response => response.json())
+            .then(data => {
+                setProject(data);
+                setLoading(false);
+            })
+            .catch(error => console.error(error));
+    }, [name]);
 
     return (
         <main className='project container'>
             <section className='projectSection'>
                 <div className='projectContent'>
-                    <h1 className='projectTitle gradient'>{project.title}</h1>
-                    {project.client &&
+                    <h1 className='projectTitle gradient'>{project?.title}</h1>
+                    {project?.client &&
                         <>
                             <h2 className='gradientSubTitle gradient'>Клиент</h2>
                             <p className='projectText'>{project.client}</p>
                         </>
                     }
-                    {project.concept &&
+                    {project?.concept &&
                         <>
                             <h2 className='gradientSubTitle gradient'>Концепция</h2>
                             <p className='projectText'>{project.concept}</p>
                         </>
                     }
-                    {project.problem &&
+                    {project?.problem &&
                         <>
                             <h2 className='gradientSubTitle gradient'>Задача</h2>
                             <p className='projectText'>{project.problem}</p>
                         </>
                     }
-                    {project.fullDescription &&
+                    {project?.fullDescription &&
                         <>
                             <h2 className='gradientSubTitle gradient'>Описание</h2>
                             <p className='projectText'>{project.fullDescription}</p>
@@ -53,14 +54,14 @@ const Project = () => {
                     }
                 </div>
                 <div className='projectImage'>
-                    {isLoading ? (
+                    {loading ? (
                         <div className='skeleton' />
                     ) : (
-                    <img className='projectImage' src={project.images['1']} alt={project.title} draggable='false'/>)
+                    <img className='projectImage' src={project?.images['1']} alt={project?.title} draggable='false'/>)
                     }
                 </div>
             </section>
-            {project.objective &&
+            {project?.objective &&
             <section className='projectSection'>
                     <div className='projectContent'>
                         <h2 className='gradientSubTitle gradient'>Цель проекта</h2>
@@ -70,35 +71,35 @@ const Project = () => {
             }
             <section className='projectSection'>
                 <div className='projectImage'>
-                    {isLoading ? (
+                    {loading ? (
                         <div className='skeleton' />
                     ) : (
-                    <img className='projectImage' src={project.images['2']} alt={project.title} draggable='false'/>)
-                    }
+                    <img className='projectImage' src={project?.images['2']} alt={project?.title} draggable='false'/>
+                        )}
                 </div>
                 <div className='projectContent'>
-                    {project.solution &&
+                    {project?.solution &&
                         <>
                             <h2 className='gradientSubTitle gradient'>Решение</h2>
                             <p className='projectText'>{project.solution}</p>
                         </>
                     }
-                    {project.projectFeatures &&
+                    {project?.projectFeatures &&
                         <>
                             <h2 className='gradientSubTitle gradient'>Особенности проекта</h2>
                             <p className='projectText'>{project.projectFeatures}</p>
                         </>
                     }
-                    {project.improvement &&
+                    {project?.improvement &&
                         <>
                             <h2 className='gradientSubTitle gradient'>Непрерывное совершенствование</h2>
                             <p className='projectText'>{project.improvement}</p>
                         </>
                     }
-                    {project.featuresAndInnovations &&
+                    {project?.featuresAndInnovations &&
                         <>
                             <h2 className='gradientSubTitle gradient'>Особенности и инновации</h2>
-                            {project.featuresAndInnovations?.map((item, index) => (
+                            {project?.featuresAndInnovations?.map((item, index) => (
                                 <ul key={index}>
                                     <li className='projectList'>
                                         <span className='projectNumberList gradient'>0{index+1}</span>
@@ -112,19 +113,19 @@ const Project = () => {
             </section>
             <section className='projectSection'>
                 <div className='projectContent'>
-                    {project.result &&
+                    {project?.result &&
                         <>
                             <h2 className='gradientSubTitle gradient'>Результат</h2>
                             <p className='projectText'>{project.result}</p>
                         </>
                     }
-                    {project.projectSignificance &&
+                    {project?.projectSignificance &&
                         <>
                             <h2 className='gradientSubTitle gradient'>Значение проекта</h2>
                             <p className='projectText'>{project.projectSignificance}</p>
                         </>
                     }
-                    {project.businessResult &&
+                    {project?.businessResult &&
                         <>
                             <h2 className='gradientSubTitle gradient'>Результаты и влияние на бизнес</h2>
                             <p className='projectText'>{project.businessResult}</p>
@@ -132,36 +133,34 @@ const Project = () => {
                     }
                 </div>
                 <div className='projectImage'>
-                    {isLoading ? (
+                    {loading ? (
                         <div className='skeleton' />
                     ) : (
-                    <img className='projectImage' src={project.images['3']} alt={project.title} draggable='false'/>)
-                    }
+                    <img className='projectImage' src={project?.images['3']} alt={project?.title} draggable='false'/>)}
                 </div>
             </section>
             <section className='projectSection'>
-                {project.images['4'] &&
+                {project?.images['4'] &&
                 <div className='projectImage'>
-                    {isLoading ? (
+                    {loading ? (
                         <div className='skeleton' />
                     ) : (
-                    <img className='projectImage' src={project.images['4']} alt={project.title} draggable='false'/>)
-                    }
+                    <img className='projectImage' src={project?.images['4']} alt={project?.title} draggable='false'/>)}
                 </div>
                 }
                 <div className='projectContent'>
-                    {project.technologiesDescription &&
+                    {project?.technologiesDescription &&
                         <>
                             <h2 className='gradientSubTitle gradient'>Используемые технологии</h2>
                             <p className='projectText'>{project.technologiesDescription}</p>
                         </>
                     }
                     <div className='projectTechnologiesWrapper'>
-                        {project.technologies?.map((tech, index) => (
+                        {project?.technologies?.map((tech, index) => (
                             <span key={index} className='projectTechnologies'>{tech}</span>
                         ))}
                     </div>
-                    {project.resultWork &&
+                    {project?.resultWork &&
                         <>
                             <h2 className='gradientSubTitle gradient'>Результат работы</h2>
                             <a className='projectLink' href={project.resultWork} target='_blank'
