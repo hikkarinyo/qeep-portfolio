@@ -1,27 +1,22 @@
 import React, {useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
-import projects from '../../data/projects'
-import data from '../../../public/data.json'
 import '../project/project.css'
 import ScrollButton from "../scrollButton/ScrollButton";
-import Loader from "../loader/Loader";
 
 const Project = () => {
     const { name } = useParams();
     const [loading, setLoading] = useState(true);
     const [project, setProject] = useState(null);
 
-    console.log(data)
-
     useEffect(() => {
-        fetch('/data.json')
+        fetch('/data/projects.json')
             .then(response => response.json())
             .then(data => {
-                setProject(data);
+                setProject(data.find(project => project.link === name))
                 setLoading(false);
             })
             .catch(error => console.error(error));
-    }, [name]);
+    }, []);
 
     return (
         <main className='project container'>

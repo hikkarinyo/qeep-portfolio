@@ -52,6 +52,11 @@ module.exports = {
                     to: path.resolve(__dirname, '..', './build/images'),
                     noErrorOnMissing: true
                 },
+                {
+                    from: path.resolve(__dirname, '..', './public/data'),
+                    to: path.resolve(__dirname, '..', './build/data'),
+                    noErrorOnMissing: true
+                },
             ]
         })
     ]
